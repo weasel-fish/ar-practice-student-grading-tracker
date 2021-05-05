@@ -95,8 +95,10 @@ Use Active Record association macros and Active Record query methods where appro
   - takes a `student` (an instance of the `Student` class), a `grade` (integer), and a `teacher_comment` (string) as arguments, and creates a new `studentExam` in the database associated with the student and the exam
 - `Exam#class_average`
   - returns the class average grade for an exam (the average of all the exam's studentExams)
+- `Exam.used_exams`
+  - retuns an array of exams that have been taken by more than 0 students
 - `Exam.lowest_average`
-  - returns the exam instance with the lowest class average grade
+  - returns the exam instance that has been used with the lowest class average grade
 - `Exam.drop_lowest_average`
   - finds the exam with the lowest class average grade and removes it
   - You'll have to delete all the studentExams belonging to this exam
