@@ -42,10 +42,10 @@ Remember: Active Record give your classes access to a lot of built-in methods! K
 
 ### Migrations
 
-Before working on the rest of the deliverables, you will need to create a migration for the `studentExams` table. See section `2.1 Naming Conventions` [at this link here](https://guides.rubyonrails.org/v5.0/active_record_basics.html) for naming conventions when it comes to tables with more than one word in the name. (Tables will all be one word tomorrow on the code challenge, though, so don't stress about this!)
+Before working on the rest of the deliverables, you will need to create a migration for the `student_exams` table. See section `2.1 Naming Conventions` [at this link here](https://guides.rubyonrails.org/v5.0/active_record_basics.html) for naming conventions when it comes to tables with more than one word in the name. (Tables will all be one word tomorrow on the code challenge, though, so don't stress about this!)
 
-- A `StudentExam` belongs to a `Student`, and a `StudentExam` also belongs to an `Exam`. In your migration, create any columns your `studentExams` table will need to establish these relationships.
-  - The `studentExams` table should also have the following columns:
+- A `StudentExam` belongs to a `student`, and a `StudentExam` also belongs to an `exam`. In your migration, create any columns your `student_exams` table will need to establish these relationships.
+  - The `student_exams` table should also have the following columns:
     -  `grade`, stores an integer
     -  `teacher_comment`, stores a string
 
@@ -69,14 +69,14 @@ Use Active Record association macros and Active Record query methods where appro
 - `Student#studentExams`
   - returns a collection of all `StudentExam` instances for this student
 - `Student#exams`
-  - returns a collection of all `Exam` instances who are subscribed to this student
+  - returns a collection of all the `Exam` instances this student has taken
 
 #### Exam
 
 - `Exam#studentExams`
   - should return a collection of all `StudentExam` instances for this exam
 - `Exam#students`
-  - should return a collection of all `Student` instances that this exam is subscribed to
+  - should return a collection of all the `Student` instances that have taken this exam
 
 ### Aggregate and Association Methods
 
