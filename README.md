@@ -94,11 +94,11 @@ Use Active Record association macros and Active Record query methods where appro
 - `Exam#insert_feedback(student, grade, comment)`
   - takes a `student` (an instance of the `Student` class), a `grade` (integer), and a `teacher_comment` (string) as arguments, and creates a new `studentExam` in the database associated with the student and the exam
 - `Exam#class_average`
-  - returns the class average for an exam (the average of all the exam's studentExams)
+  - returns the class average grade for an exam (the average of all the exam's studentExams)
 - `Exam.lowest_average`
-  - returns the exam instance with the lowest class average
+  - returns the exam instance with the lowest class average grade
 - `Exam.drop_lowest_average`
-  - finds the exam with the lowest class average and removes it
+  - finds the exam with the lowest class average grade and removes it
   - You'll have to delete all the studentExams belonging to this exam
 
 #### Student
