@@ -85,7 +85,7 @@ Use Active Record association macros and Active Record query methods where appro
   - `puts` a string to the terminal to display the details of the studentExam
   - the string should be formatted like this: `{student name} took the {exam subject} exam receiving a score of {grade}`
 
-- `StudentExam#questions_correct_ration`
+- `StudentExam#questions_correct_ratio`
   - returns a string displaying the total number of questions the student got correct over how many questions there were total. Assume the studentExam grade is the percentage the student got correct.
   - the return value should be formatted like this: `"10 questions correct out of 20 questions total"`
 
