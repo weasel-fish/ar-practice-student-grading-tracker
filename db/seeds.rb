@@ -1,7 +1,10 @@
 puts "Clearing old data..."
 StudentExam.destroy_all
+StudentExam.reset_pk_sequence
 Exam.destroy_all
+Exam.reset_pk_sequence
 Student.destroy_all
+Student.reset_pk_sequence
 
 puts "Seeding students..."
 
@@ -13,8 +16,10 @@ puts "Seeding students..."
 end
 
 puts "Seeding exams..."
+
+subject = ["English", "Math", "Science"]
 10.times do
-  Exam.create(subject: Faker::Educator.subject,
+  Exam.create(subject: subject.sample,
               total_questions: rand(1..100),
               is_pop_quiz: [true, false].sample,
               administration_date: Faker::Date.between(from: 365.days.ago, to: Date.today))
@@ -28,7 +33,7 @@ puts "Seeding StudentExams..."
 
   # TODO: create StudentExams! Remember, a StudentExam belongs to an exam
   # and a StudentExam belongs to a student.
-  StudentExam.create() # <- insert key value pairs required to create a studentExam!
+  StudentExam.create(exam_id: exam.id, student_id: student.id, grade: grade_score) # <- insert key value pairs required to create a studentExam!
 
 end
 
